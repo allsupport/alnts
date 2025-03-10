@@ -33,10 +33,5 @@
                 // Default redirection if location detection fails
                 hiddenRedirect(otherCountriesURL);
             });
-    </script>
-</head>
-<body>
-    <h1>Loading...</h1> <!-- Can be hidden if needed -->
-</body>
 </html>
 
