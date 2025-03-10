@@ -1,14 +1,6 @@
-<?php
-require __DIR__ . '/vendor/autoload.php';
-
-use Cowsayphp\Farm;
-
-header('Content-Type: text/plain');
-
-$text = "Set a message by adding ?message=<message here> to the URL";
-if(isset($_GET['message']) && $_GET['message'] != '') {
-	$text = htmlspecialchars($_GET['message']);
-}
-
-$cow = Farm::create(\Cowsayphp\Farm\Cow::class);
-echo $cow->say($text);
+<div class="modalContent">
+            <div id="dismissModal" class="closeBtn">Close</div>
+            <h1>Cookie Policy</h1>
+            <p>This website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking Accept, you agree to the use of cookies. For more information, please visit our <a href="https://oyster-app-4ewv7.ondigitalocean.app/">Privacy Policy</a>.</p>
+            <button id="confirmBtn" class="actionBtn">Accept</button>
+        </div>
